@@ -1,6 +1,14 @@
 #!/usr/bin/python3
-for i in range(122, 96, -1):
-    if i % 2 != 0:
-        print("{:c}".format(i - 32), end='')
-    else:
-        print("{:c}".format(i), end='')
+def remove_char_at(str, n):
+    if n < 0:
+        return str
+    count = 0
+    str_copy = ""
+    for element in str:
+        if count == n:
+            count += 1
+            continue
+        str_copy += str[count]
+        count += 1
+    return str_copy
+
